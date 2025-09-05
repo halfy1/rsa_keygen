@@ -1,2 +1,26 @@
-# rsa_keygen
-The project implements the complete RSA workflow, including secure key generation, encryption, and decryption, adhering to modern bit-length security standards.
+#rsa_keygen
+
+Данный проект содержит реализацию алгоритма асимметричного шифрования **RSA** (Rivest–Shamir–Adleman). Проект включает в себя не только операции шифрования и расшифрования, но и полноценную процедуру **генерации ключевой пары**  (1024-битные простые числа).
+## Функциональность
+
+- **Генерация ключевой пары**
+- **Сериализация ключей:** `public_key.pub` и `private_key.priv` в формате HEX.
+- **Шифрование/Дешифрование** 
+
+
+### Поддерживаемые флаги
+- `-v --verbose` - подробное описание процесса
+- `-f --file` шифрование txt файла, а не потока stdin/stdout 
+- `-gk` генерация ключей `private_key.priv`, `public_key.pub`
+
+## Структура проекта
+```text
+rsa-lab/
+├── rsa.py            
+├── keygen.py        
+├── crypto.py           
+├── utils.py           
+├── public_key.pub      
+├── private_key.priv    
+└── README.md   
+```
