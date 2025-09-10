@@ -1,0 +1,24 @@
+# Установить поведение для всех текстовых файлов
+* text=auto
+
+# Явно указать какие файлы считать текстовыми
+*.txt text
+*.md text
+*.js text
+*.css text
+*.html text
+*.json text
+*.xml text
+*.py text
+*.php text
+*.java text
+*.c text
+*.cpp text
+*.h text
+
+# Для бинарных файлов указать чтобы Git не пытался обрабатывать их
+*.png binary
+*.jpg binary
+*.gif binary
+*.pdf binary
+*.zip binary
