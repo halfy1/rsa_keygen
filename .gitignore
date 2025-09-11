@@ -215,3 +215,7 @@ __marimo__/
 node_modules/
 vendor/
 .idea/
+
+keys/
+
+task_help.md

@@ -49,7 +49,7 @@ def generate(path_dir, size, name, force):
                 type=click.Path(exists=True, dir_okay=False))
 @click.argument("input_file", type=click.Path(exists=True, dir_okay=False))
 @click.option("-o", "--output", default=None,
-              help="Имя выходного файла (по умолчанию: encrypted/имя_файла.enc)")
+              help="Имя выходного файла, default = encrypted/имя_файла.enc")
 def encrypt(public_key_path, input_file, output):
     """Шифрует файл с помощью публичного ключа"""
     from src.crypto import encrypt_file
@@ -75,14 +75,14 @@ def encrypt(public_key_path, input_file, output):
                 type=click.Path(exists=True, dir_okay=False))
 @click.argument("encrypted_file", type=click.Path(exists=True, dir_okay=False))
 @click.option("-o", "--output", default=None,
-              help="Имя выходного файла (по умолчанию: decrypted/имя_файла.dec)")
+              help="Имя выходного файла, default = decrypted/имя_файла.dec")
 def decrypt(private_key_path, encrypted_file, output):
     """Дешифрует файл с помощью приватного ключа"""
     from src.crypto import decrypt_file
 
     if output is None:
         input_path = Path(encrypted_file)
-        output_file = Path("decrypted") / f"{input_path.stem}.dec"
+        output_file = Path("decrypted") / f"{input_path.name}.dec"
     else:
         output_file = Path(output)
 
