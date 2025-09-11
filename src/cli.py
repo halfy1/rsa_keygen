@@ -18,7 +18,8 @@ def cli():
               help="Размер ключа в битах")
 @click.option("-n", "--name", default="id_rsa",
               help="Базовое имя для ключей")
-@click.option("-f","--force", is_flag=True, help="Перезаписать существующие ключи")
+@click.option("-f", "--force", is_flag=True,
+              help="Перезаписать существующие ключи")
 def generate(path_dir, size, name, force):
     """Генерирует пару RSA ключей"""
     from src.rsa import generate_key_pair
